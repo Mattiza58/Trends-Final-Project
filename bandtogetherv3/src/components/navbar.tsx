@@ -1,10 +1,11 @@
 import {Link} from "react-router-dom"
+import styles from "./maintext.module.css"
 
 const NavBar = (()=>{
     return  <nav>
         <div>
             <Link to = "/">
-            <img src = "../../public/logo(small)v2.png" style = {{width: "5%", height: "auto", padding: "1em"}}>
+            <img src = "../../public/logo(small)v2.png" className = {styles.small_logo}>
             </img>
             </Link>
         </div>

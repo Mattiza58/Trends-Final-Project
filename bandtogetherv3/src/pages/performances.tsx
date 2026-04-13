@@ -1,6 +1,8 @@
+import LargeText from "../components/largetext";
+
 const Perfomances = (() =>{
     return <div>
-        hi
+        <LargeText link = "Performances" />
     </div>
 })
 

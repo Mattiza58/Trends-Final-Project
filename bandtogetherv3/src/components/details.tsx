@@ -11,7 +11,7 @@ const Details = (()=> {
         </br>
         <br>
         </br>
-        With BandTogether., you can let your wildest band dreams come true.
+        With BandTogether, you can let your wildest band dreams come true.
         </div>
     </div>
 })

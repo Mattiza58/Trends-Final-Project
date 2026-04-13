@@ -1,6 +1,8 @@
+import LargeText from "../components/largetext";
+
 const Music = (() =>{
     return <div>
-        hi
+        <LargeText link = "Music"/>
     </div>
 })
 

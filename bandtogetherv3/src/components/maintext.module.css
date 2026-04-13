@@ -29,11 +29,32 @@
     opacity: 0.9;
 }
 
+.large_text{
+    padding: 2rem;
+    color: var(--main_color);
+    font-family: "Passion One", sans-serif;
+    font-size: 10vh;
+}
+
 .logo{
     max-width: 80%;
     max-height: fit-content;
     min-width: auto;
     min-height: auto;
+}
+
+.small_logo{
+    width: 30px;
+    height: auto; 
+    /* min-width: 7%; */
+    padding: 1em
+
+}
+
+.small_logo :hover{
+    opacity: 75%;
+    background-color: blue;
+    transition: 1s;
 }
 
 
@@ -135,4 +156,39 @@ nav li.active{
 nav li:hover{
     background-color: darkred;
 }
+
+.profile_card_container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 40px;
+}
+
+.card_container{
+    /* background-color: red; */
+    margin: 10px;
+    height: 400px;
+    align-items: center;
+    width: inherit
+}
+
+.profile_image{
+    justify-self: center;
+    width: 270px;
+    height: 270px;
+    display: block;
+    border-radius: 50%;
+    background-color:gray;
+}
+
+.edit_profile_button{
+    width: 300px;
+    justify-self: center;
+    display: block;
+    padding: 10px;
+    background-color: gray;
+    font-family: "Be Vietnam Pro", sans-serif;
+    color: white
+}
+
+
 

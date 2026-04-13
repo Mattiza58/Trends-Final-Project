@@ -1,8 +1,8 @@
+import LargeText from "../components/largetext";
+
 const Connect = (() =>{
     return <div style = {{color: "black"}}>
-        <h1>
-            Hi
-        </h1>
+        <LargeText link = "Connect"/>
     </div>
 })
 
