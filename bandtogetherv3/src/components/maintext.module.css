@@ -185,9 +185,15 @@ nav li:hover{
     justify-self: center;
     display: block;
     padding: 10px;
-    background-color: gray;
+    background-color: var(--main_color);
     font-family: "Be Vietnam Pro", sans-serif;
-    color: white
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.edit_profile_button:hover{
+    opacity: 0.7 !important;
 }
 
 
