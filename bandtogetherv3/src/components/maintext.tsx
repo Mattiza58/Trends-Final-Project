@@ -1,9 +1,10 @@
 import styles from "./maintext.module.css"
 
+
 const MainText = (() =>{
     return <div className= {styles.maintext2}>
         <div>
-            <img src = "../../public/logo.png" style = {{width: "80%"}}></img>
+            <img className = {styles.logo} src = "../../public/logo.png"></img>
         </div>
         <div className = {styles.sign_up_box}>
             Ready to form the band of your <b>dreams</b>?
