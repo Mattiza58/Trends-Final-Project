@@ -13,7 +13,7 @@ const MainText = (() =>{
             <br>
             </br>
             <u><b>Sign up now</b></u>
-            <img src = "../../public/arrowtext.png" style = {{position: "absolute", width: "10%", paddingTop:"80px", paddingLeft: "50px"}}></img>
+            {/* <img src = "../../public/arrowtext.png" style = {{position: "absolute", width: "10%", paddingTop:"80px", paddingLeft: "50px"}}></img> */}
         </div>
     </div>
 })

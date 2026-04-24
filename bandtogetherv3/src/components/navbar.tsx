@@ -22,6 +22,13 @@ const NavBar = (()=>{
             <li>
                 <Link to = "/music">Music</Link>
             </li>
+            <li className = {styles.other_li}>
+                <Link to = "/sign_in">
+                    <button className ={styles.login_button}>
+                        Login 
+                    </button>
+                </Link>
+            </li>
         </ul>
     </nav>
 })

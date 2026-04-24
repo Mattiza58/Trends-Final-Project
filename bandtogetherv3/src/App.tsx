@@ -6,6 +6,7 @@ import Profile from "./pages/profile";
 import Connect from "./pages/connect";
 import Performances from "./pages/performances";
 import { Route, Routes } from "react-router-dom";
+import SignIn from "./pages/sign_in";
 
 
 
@@ -20,6 +21,7 @@ function App() {
             <Route path = "/profile" element = {<Profile/>}/>
             <Route path = "/performances" element = {<Performances/>}/>
             <Route path = "/music" element = {<Music/>}/>
+            <Route path = "sign_in" element = {<SignIn/>}/>
         </Routes>
         </>
     );

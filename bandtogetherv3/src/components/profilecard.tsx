@@ -45,9 +45,19 @@ const ProfileCard = ({name, user_name, followers, following, location, instrumen
             </ul>
         </div>
         <div className={styles.card_container}>
-            Upcoming Shows
+            <div style = {{fontFamily: "Be Vietnam Pro, sans-serif", fontSize: "30px"}}>
+                <b>Latest Music</b>
+            </div>
+            <div style = {{paddingTop: "20px"}}>
+            {/* NOTE: The iframe is just a placeholder and not the intended functionality */}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RlNhD0oS5pk?si=I6iymzVYQ3Kkl5kq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 }
+
+// const getCalendar = (()=>{
+
+// })
 
 export default ProfileCard
