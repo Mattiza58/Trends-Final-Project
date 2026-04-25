@@ -1,18 +1,9 @@
-import GoogleButton from 'react-google-button';
-import { signInWithGoogle } from '../firebase';
+import SignUpBox from '../components/sign_up_box';
+
 
 const SignIn = (()=>{
-    return <div style = {{display: "block"}}>
-        <div style = {{justifySelf: "center", marginTop: "100px"}}>
-            <GoogleButton onClick = {signInWithGoogle}/>
-            <label> UserName</label>
-            <input type = "text"></input>
-            <input type = "text"></input>
-            <button>
-                sign up
-            </button>
-        </div>
-    </div>
+
+    return <SignUpBox />
 })
 
 export default SignIn;

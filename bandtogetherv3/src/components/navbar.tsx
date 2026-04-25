@@ -1,7 +1,11 @@
 import {Link} from "react-router-dom"
 import styles from "./maintext.module.css"
+import { useAuth } from "../context/AuthContext"
+
 
 const NavBar = (()=>{
+const {user, signOut} = useAuth();
+
     return  <nav>
         <div>
             <Link to = "/">
@@ -23,26 +27,16 @@ const NavBar = (()=>{
                 <Link to = "/music">Music</Link>
             </li>
             <li className = {styles.other_li}>
-                <Link to = "/sign_in">
-                    <button className ={styles.login_button}>
-                        Login 
-                    </button>
-                </Link>
+                {user ? <button className ={styles.login_button} onClick = {signOut}>
+                    Log Out
+                </button> : <Link to = "/sign_in" style = {{margin: "0", padding: "0"}}> <button className ={styles.login_button}>
+                    Login 
+                </button> </Link>}                
             </li>
         </ul>
     </nav>
 })
 
-// function CustomLink({to, children, ...props}){
-//     const resolvedPath = useResolvedPath(to)
-//     const isActive = useMatch({path: resolvedPath.pathname, end: true})
-//     return (
-//         <li className = {path === to ? "active" : ""}>
-//             <Link to = {to} {...props}>
-//                 {children}
-//             </Link>
-//         </li>
-//     )
-// }
+
 
 export default NavBar;

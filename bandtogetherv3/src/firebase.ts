@@ -1,20 +1,12 @@
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { signInWithPopup } from "firebase/auth";
 import { signOut } from "firebase/auth";
-
-
-
-import { getAnalytics } from "firebase/analytics";
 import withFirebaseAuth from 'react-with-firebase-auth';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAzmUqhExlB3wGry6bX5C0xoU4WJu-Bg4A",
   authDomain: "bandtogether-d9c5f.firebaseapp.com",
@@ -25,7 +17,7 @@ const firebaseConfig = {
   measurementId: "G-2NM8GYRT2C"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app)
@@ -54,5 +46,3 @@ export {
   signInWithGoogle,
   signOutFirebase as signOut
 }
-
-// const analytics = getAnalytics(app);

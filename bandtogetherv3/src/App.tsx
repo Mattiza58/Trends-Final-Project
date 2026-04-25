@@ -17,8 +17,8 @@ function App() {
    
 
     return (
+        <>
         <AuthUserProvider>
-            <>
             <NavBar />
             <Routes>
                 <Route path = "/" element = {<Home/>}/>
@@ -28,8 +28,8 @@ function App() {
                 <Route path = "/music" element = {<Music/>}/>
                 <Route path = "sign_in" element = {<SignIn/>}/>
             </Routes>
-            </>
         </AuthUserProvider>
+        </>
     );
 }
 

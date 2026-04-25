@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "firebase": "^12.12.1",
+    "firebase-admin": "^13.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-button": "^0.8.0",
@@ -19,6 +21,7 @@
     "react-with-firebase-auth": "^1.4.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.6.0",
     "@types/react": "^18.2.15",
@@ -29,6 +32,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
