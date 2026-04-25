@@ -26,6 +26,9 @@ importers:
       react-router-dom:
         specifier: ^7.14.0
         version: 7.14.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-with-firebase-auth:
+        specifier: ^1.4.1
+        version: 1.4.1(firebase@12.12.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/express':
         specifier: ^5.0.6
@@ -1325,6 +1328,14 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
+
+  react-with-firebase-auth@1.4.1:
+    resolution: {integrity: sha512-IkhPlnSFwVu30f/m6tL7cno4SsVnq+yUSadk1ntuurLgVZjTFZLwYTnIzwM4Rc8sx+wgBl7mEGo8XPzWWLjg7A==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      firebase: ^8.6.8
+      react: ^17.0.2
+      react-dom: ^17.0.2
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -2936,6 +2947,12 @@ snapshots:
       react: 18.3.1
       set-cookie-parser: 2.7.2
     optionalDependencies:
+      react-dom: 18.3.1(react@18.3.1)
+
+  react-with-firebase-auth@1.4.1(firebase@12.12.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      firebase: 12.12.1
+      react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
   react@18.3.1:
