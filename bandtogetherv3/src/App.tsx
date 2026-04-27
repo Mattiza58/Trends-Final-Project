@@ -14,8 +14,6 @@ import AuthUserProvider from "./context/AuthContext.tsx"
 
 function App() {
 
-   
-
     return (
         <>
         <AuthUserProvider>

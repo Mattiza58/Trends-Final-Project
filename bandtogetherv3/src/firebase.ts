@@ -1,26 +1,26 @@
-
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { collection, getFirestore } from "firebase/firestore";
 import { signInWithPopup } from "firebase/auth";
 import { signOut } from "firebase/auth";
 import withFirebaseAuth from 'react-with-firebase-auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAzmUqhExlB3wGry6bX5C0xoU4WJu-Bg4A",
-  authDomain: "bandtogether-d9c5f.firebaseapp.com",
-  projectId: "bandtogether-d9c5f",
-  storageBucket: "bandtogether-d9c5f.firebasestorage.app",
-  messagingSenderId: "42893087101",
-  appId: "1:42893087101:web:fb0c76fb91fbf803e73c14",
-  measurementId: "G-2NM8GYRT2C"
+  // apiKey: "AIzaSyAzmUqhExlB3wGry6bX5C0xoU4WJu-Bg4A",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDERID,
+  appId: import.meta.env.VITE_FIREBASE_APPID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENTID,
 };
-
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app)
+const Dates = collection(db, "Dates");
 
 const providers = {
   googleProvider: new GoogleAuthProvider()
@@ -42,6 +42,7 @@ const signOutFirebase = () => {
 export {
   db,
   auth,
+  Dates,
   createComponentWithAuth,
   signInWithGoogle,
   signOutFirebase as signOut

@@ -20,7 +20,7 @@ const { user } = useAuth();
 
     return <div className = {styles.splash_screen}>
         <div className = {styles.login_box}>
-            <b>Sign-Up / Log-In</b>
+            <b>Sign-Up</b>
             <GoogleButton onClick = {signInWithGoogle}/>
         </div>
     </div>

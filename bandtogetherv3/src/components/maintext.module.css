@@ -236,6 +236,7 @@ nav li:hover{
     background-color: var(--secondary_color);
     text-align: center;
     font-family: "Be Vietnam Pro", "sans-serif";
+    font-size: large;
     padding-top: 50px;
     border-radius: 10px;
     

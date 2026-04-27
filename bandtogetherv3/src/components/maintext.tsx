@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./maintext.module.css"
 
 
@@ -12,7 +13,7 @@ const MainText = (() =>{
             </br>
             <br>
             </br>
-            <u><b>Sign up now</b></u>
+            <u><b><Link to = "/sign_in">Sign up now</Link></b></u>
             {/* <img src = "../../public/arrowtext.png" style = {{position: "absolute", width: "10%", paddingTop:"80px", paddingLeft: "50px"}}></img> */}
         </div>
     </div>

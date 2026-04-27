@@ -1,8 +1,38 @@
 import express from 'express';
+import cors from 'cors';
+// import { getFirestore } from 'firebase-admin/firestore';
+// import { initializeApp } from 'firebase-admin/app';
+import admin from 'firebase-admin'
+import serviceAccount from '../bandtogether-adminSDK.json' with { type: 'json' };
+ 
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount as admin.ServiceAccount)
+})
+const db = admin.firestore();
+
 const app = express();
-const port = 3000;
 
 app.use(express.json())
+app.use(cors())
+
+app.get("/", async (req, res) =>{
+    const snapshot = await db.collection('Users').get();
+    const list = snapshot.docs.map((doc) => ({id:doc.id, ...doc.data()}));
+    console.log(list)
+    res.send(list);
+
+})
+
+
+app.post("/profile", async(req, res) =>{
+    const data = req.body;
+    await db.collection('Users').add(data);
+    res.send({msg: "User added"})
+})
+
+
+
+app.listen(3000, () => console.log("Up and Running on 3000"))
 
 /*
 Here is an outline for the API routes I intend to use. NOTE: Everything here is a placeholder
@@ -15,43 +45,43 @@ Google Calendar API implementation, I'll see if I can store data in a database w
 When a vistor looks at someone's profile the data should be fetched where the calendar events matches the profile ID
 */
 
-app.get('./', (req, res) =>{
-    //
-    res.status(200).json({message: "GET Request: Calendar received"})
-})
+// app.get('./', (req, res) =>{
+//     //
+//     res.status(200).json({message: "GET Request: Calendar received"})
+// })
 
-/*
-POST (Placeholder)
-Creates a new event on the calendar
-*/
-app.post("./", (req, res) =>{
-    const newDate = req.body;
+// /*
+// POST (Placeholder)
+// Creates a new event on the calendar
+// */
+// app.post("./", (req, res) =>{
+//     const newDate = req.body;
 
-    res.status(201).json({message: "POST"})
-})
+//     res.status(201).json({message: "POST"})
+// })
 
-/*
-PUT (Placeholder)
-Updates an event on a calendar
-*/
-app.put("./", (req, res) =>{
-    const updatedDate = req.params;
+// /*
+// PUT (Placeholder)
+// Updates an event on a calendar
+// */
+// app.put("./", (req, res) =>{
+//     const updatedDate = req.params;
 
-    res.status(200).json({message: "PUT"})
-})
+//     res.status(200).json({message: "PUT"})
+// })
 
-/*
-DELETE (Placeholder)
-Deletes an event in the calendar
-*/
-app.delete("./", (req, res) =>{
-    const date = req.params;
+// /*
+// DELETE (Placeholder)
+// Deletes an event in the calendar
+// */
+// app.delete("./", (req, res) =>{
+//     const date = req.params;
 
-    res.status(200).json({message: "DELETE"})
-})
+//     res.status(200).json({message: "DELETE"})
+// })
 
-app.listen(port, () =>{
-    console.log("Server is running!")
-})
+// app.listen(port, () =>{
+//     console.log("Server is running!")
+// })
 
 
