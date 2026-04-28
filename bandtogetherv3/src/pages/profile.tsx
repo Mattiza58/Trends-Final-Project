@@ -8,14 +8,14 @@ import { getAuth } from "firebase/auth";
 
 const Profile = (() =>{
     const auth = getAuth();
-    const user = auth.currentUser;
+    // const user = auth.currentUser;
 
-    const props: UserProps = {name: user?.displayName, user_name: "@mattiza58", followers: 375, following: 371, location: "Ithaca, NY", instruments: "Guitar, Bass", genres: "Rock, Metal, Indie", yrs_experience: "4+ Years" }
+    // const props: UserProps = {name: user?.displayName, user_name: "@mattiza58", followers: 375, following: 371, location: "Ithaca, NY", instruments: "Guitar, Bass", genres: "Rock, Metal, Indie", yrs_experience: "4+ Years" }
 
     return <div>
         <LargeText link = "Profile"/>
 
-        <ProfileCard {...props}/>
+        <ProfileCard name = "Matthew Izaguirre" user_name="@mattiza58" followers= {375} following={371} location="Ithaca, NY" instruments="Guitar, Bass" genres="Rock, Metal, Indie" yrs_experience="4+ Years Experience"/>
 
     </div>
 })

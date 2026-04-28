@@ -1,9 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-// import { getFirestore } from 'firebase-admin/firestore';
-// import { initializeApp } from 'firebase-admin/app';
 import admin from 'firebase-admin'
 import serviceAccount from '../bandtogether-adminSDK.json' with { type: 'json' };
+
+/*
+NOTE: The idea for the routes have changed. Though I implemented the server to make requests to FireBase, I think I might make it more to fetch and update
+user data rather than calendar dates. Luckily the server requests work, so I can start from there. The original outline is commented out just so I have access to it just in case
+(more so the idea)
+*/
  
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as admin.ServiceAccount)
@@ -16,19 +20,49 @@ app.use(express.json())
 app.use(cors())
 
 app.get("/", async (req, res) =>{
+    try{
     const snapshot = await db.collection('Users').get();
     const list = snapshot.docs.map((doc) => ({id:doc.id, ...doc.data()}));
     console.log(list)
     res.send(list);
+    } catch (error) {
+        res.status(500).send({msg: "Failed to get all users"})
+    }
 
 })
 
 
 app.post("/profile", async(req, res) =>{
-    const data = req.body;
-    await db.collection('Users').add(data);
-    res.send({msg: "User added"})
+    try{
+        const data = req.body;
+        await db.collection('Users').add(data);
+        res.send({msg: "User added"})
+    } catch (error){
+        res.status(500).send({msg: "Failed to update user"})
+    }
 })
+
+app.delete("/profile:id", async(req, res) =>{
+    try{
+        const docID = req.params.id;
+        await db.collection('Users').doc(docID).delete();
+        res.send({msg: "User deleted"})
+    }
+    catch{
+        res.status(500).send({msg: "Failed to delete user, error"})
+    }
+})
+
+app.put("/profile/:id", async (req, res) => {
+    try {
+        const docID = req.params.id;
+        const updatedData = req.body;
+        await db.collection('Users').doc(docID).update(updatedData);
+        res.send({ msg: "User updated" });
+    } catch (error) {
+        res.status(500).send({ msg: "Failed to update user", error });
+    }
+});
 
 
 
