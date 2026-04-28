@@ -8,6 +8,7 @@ import Performances from "./pages/performances";
 import { Route, Routes } from "react-router-dom";
 import SignIn from "./pages/sign_in";
 import AuthUserProvider from "./context/AuthContext.tsx"
+import UserCreationPage from "./pages/user_creation_page.tsx";
 
 
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path = "/performances" element = {<Performances/>}/>
                 <Route path = "/music" element = {<Music/>}/>
                 <Route path = "sign_in" element = {<SignIn/>}/>
+                <Route path = "create_user" element = {<UserCreationPage />}/>
             </Routes>
         </AuthUserProvider>
         </>
