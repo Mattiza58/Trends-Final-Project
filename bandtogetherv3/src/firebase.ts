@@ -7,7 +7,6 @@ import { signOut } from "firebase/auth";
 import withFirebaseAuth from 'react-with-firebase-auth';
 
 const firebaseConfig = {
-  // apiKey: "AIzaSyAzmUqhExlB3wGry6bX5C0xoU4WJu-Bg4A",
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ,
   projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
