@@ -56,7 +56,7 @@ const SearchPopup = ({ onClose }: SearchPopupProps) => {
             <button className={styles.search_popup_close} onClick={onClose}>×</button>
 
             <div className={styles.search_bar_wrapper} style={{ marginBottom: "1.5rem" }}>
-                <span className={styles.search_icon}>&#128269;</span>
+                <img className={styles.search_icon} src="/search_icon.png" alt="" />
                 <input
                     ref={inputRef}
                     className={styles.search_bar}

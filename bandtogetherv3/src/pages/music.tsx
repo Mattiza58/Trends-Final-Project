@@ -54,7 +54,7 @@ const Music = () => {
             <div className={styles.large_text} style={{ padding: "2rem 2rem 1rem 0" }}>Music</div>
 
             <div className={styles.search_bar_wrapper}>
-                <span className={styles.search_icon}>&#128269;</span>
+                <img className={styles.search_icon} src="/search_icon.png" alt="" />
                 <input
                     className={styles.search_bar}
                     type="text"
