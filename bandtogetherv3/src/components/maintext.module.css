@@ -179,6 +179,13 @@ nav li:hover{
     width: inherit
 }
 
+.profile_image_wrapper {
+    position: relative;
+    width: 270px;
+    display: block;
+    margin: 0 auto;
+}
+
 .profile_image{
     justify-self: center;
     width: 270px;
@@ -186,6 +193,15 @@ nav li:hover{
     display: block;
     border-radius: 50%;
     background-color:gray;
+}
+
+.edit_pfp_icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
 }
 
 .edit_profile_button{
@@ -198,6 +214,7 @@ nav li:hover{
     color: white;
     border: none;
     border-radius: 15px;
+    transition: opacity 0.15s;
 }
 
 .edit_profile_button:hover{
@@ -929,6 +946,111 @@ nav li:hover{
     text-align: center;
     margin: 0;
     font-weight: 600;
+}
+
+.connect_search_row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 1000px;
+}
+
+.filter_button {
+    background-color: var(--main_color);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 0.7rem 2rem;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+}
+
+.filter_button:hover {
+    opacity: 0.85;
+}
+
+.connect_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    max-width: 1000px;
+}
+
+.connect_card {
+    background-color: var(--main_color);
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.connect_card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(255, 49, 49, 0.3);
+}
+
+.connect_card_image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    align-self: center;
+    margin-bottom: 1.1rem;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(0,0,0,0.2);
+}
+
+.connect_card_info {
+    width: 100%;
+}
+
+.connect_card_name {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    margin: 0 0 0.2rem;
+}
+
+.connect_card_username {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 0.6rem;
+}
+
+.connect_card_location {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.connect_pin_icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.connect_card_instruments {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
 }
 
 

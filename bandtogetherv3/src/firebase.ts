@@ -47,6 +47,12 @@ const uploadSongImage = async (file: File, songId: string): Promise<string> => {
   return getDownloadURL(imageRef);
 }
 
+const uploadProfilePicture = async (file: File, userId: string): Promise<string> => {
+  const imageRef = ref(storage, `profilePictures/${userId}/avatar`);
+  await uploadBytes(imageRef, file);
+  return getDownloadURL(imageRef);
+}
+
 export {
   db,
   auth,
@@ -56,4 +62,5 @@ export {
   signInWithGoogle,
   signOutFirebase as signOut,
   uploadSongImage,
+  uploadProfilePicture,
 }

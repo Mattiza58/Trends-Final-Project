@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { doc, getDoc, collection, getDocs } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs, updateDoc } from "firebase/firestore";
 import LargeText from "../components/largetext";
 import ProfileCard from "../components/profilecard";
 import EditProfileModal from "../components/EditProfileModal";
-import { db } from "../firebase";
+import { db, uploadProfilePicture } from "../firebase";
 import { useAuth } from "../context/AuthContext";
 import { FirestoreUserProfile, Song, Band } from "../types";
 
@@ -14,6 +14,13 @@ const Profile = () => {
     const [resolvedBands, setResolvedBands] = useState<Band[]>([]);
     const [loading, setLoading] = useState(true);
     const [showEditModal, setShowEditModal] = useState(false);
+
+    const handlePictureChange = async (file: File) => {
+        if (!user) return;
+        const url = await uploadProfilePicture(file, user.uid);
+        await updateDoc(doc(db, "users", user.uid), { pictureUrl: url });
+        setProfile(prev => prev ? { ...prev, pictureUrl: url } : prev);
+    };
 
     useEffect(() => {
         if (authLoading) return;
@@ -71,9 +78,11 @@ const Profile = () => {
             instruments={profile.instruments.join(", ")}
             genres={profile.genres.join(", ")}
             yrs_experience={`${profile.experience} Years Experience`}
+            pictureUrl={profile.pictureUrl}
             songs={resolvedSongs}
             bands={resolvedBands}
             onEditClick={() => setShowEditModal(true)}
+            onPictureChange={handlePictureChange}
         />
         {showEditModal && (
             <EditProfileModal

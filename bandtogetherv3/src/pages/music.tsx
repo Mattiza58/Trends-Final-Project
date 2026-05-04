@@ -12,11 +12,12 @@ const POPULAR_RELEASES = [
 ];
 
 const NEW_RELEASES = [
-    { title: "Hard To Explain", artist: "The Strokes",    image: "/strokes.jpg", spotifyUrl: "https://open.spotify.com/embed/track/0QwZfbw26QeUoIy82Z2jYp?utm_source=generator" },
-    { title: "Arabella",        artist: "Arctic Monkeys",          image: "/am.jpeg",                         spotifyUrl: "https://open.spotify.com/embed/track/5LyFTf7KMD3CsRA7B5gzEm?utm_source=generator" },
-    { title: "Champagne Supernova",         artist: "Oasis",  image: "/oasis.jpeg",                         spotifyUrl: "https://open.spotify.com/embed/track/4cgjA7B4fJBHyB9Ya2bu0t?utm_source=generator" },
-    { title: "1901",  artist: "Phoenix",   image: "/phoenix.jpeg",                              spotifyUrl: "https://open.spotify.com/embed/track/7snQQk1zcKl8gZ92AnueZW?utm_source=generator" },
+    { title: "Hard To Explain", artist: "The Strokes",    image: "/strokes.jpg", spotifyUrl: "https://open.spotify.com/embed/track/6ljsIKKZfyEuQqMXincQZQ?utm_source=generator" },
+    { title: "Arabella",        artist: "Arctic Monkeys",          image: "/am.jpeg",                         spotifyUrl: "https://open.spotify.com/embed/track/7nzsY8vlnKdvGOEE0rjAXZ?utm_source=generator"  },
+    { title: "Champagne Supernova",         artist: "Oasis",  image: "/oasis.jpeg",                         spotifyUrl: "https://open.spotify.com/embed/track/6EMynpZ10GVcwVqiLZj6Ye?utm_source=generator" },
+    { title: "1901",  artist: "Phoenix",   image: "/phoenix.jpeg",                              spotifyUrl: "https://open.spotify.com/embed/track/68hYdj3GepWm2R202KhJT7?utm_source=generator" },
 ]
+
 
 const Music = () => {
     const [searchOpen, setSearchOpen] = useState(false);

@@ -1,11 +1,40 @@
+import { useRef } from "react";
 import styles from "./maintext.module.css"
 import { UserProps } from "../types.ts";
 
 const ProfileCard = (props: UserProps) =>{
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file && props.onPictureChange) {
+            props.onPictureChange(file);
+        }
+        e.target.value = "";
+    };
+
     return <div className={styles.profile_card_container}>
         <div className={styles.card_container}>
-            <img src = "/placeholder_icon.png" className={styles.profile_image}>
-            </img>
+            <div className={styles.profile_image_wrapper}>
+                <img
+                    src={props.pictureUrl || "/placeholder_icon.png"}
+                    className={styles.profile_image}
+                    onError={e => { (e.target as HTMLImageElement).src = "/placeholder_icon.png" }}
+                />
+                <img
+                    src="/edit_pfp_icon.png"
+                    className={styles.edit_pfp_icon}
+                    alt="Edit profile picture"
+                    onClick={() => fileInputRef.current?.click()}
+                />
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    style={{ display: "none" }}
+                    onChange={handleFileChange}
+                />
+            </div>
             <div style = {{fontFamily: "Be Vietnam Pro, sans-serif",  
                 padding: "10px", fontSize: "1.25rem", margin: "10px"}}>
                 {props.name}<br></br>
@@ -35,7 +64,10 @@ const ProfileCard = (props: UserProps) =>{
             </ul>
         </div>
         <div className={styles.profile_right_panel}>
-            <div className={styles.section_header}>Latest Music</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem" }}>
+                <div className={styles.section_header} style={{ marginBottom: 0 }}>Latest Music</div>
+                <button className={styles.search_result_add}>+</button>
+            </div>
             <div className={styles.song_card_row}>
                 {(props.songs ?? []).slice(0, 3).map((song, i) => (
                     <div key={i} className={styles.song_card_item}>
@@ -59,7 +91,10 @@ const ProfileCard = (props: UserProps) =>{
                 ))}
             </div>
 
-            <div className={styles.section_header} style={{ marginTop: "2.5rem" }}>Bands</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem", marginTop: "2.5rem" }}>
+                <div className={styles.section_header} style={{ marginBottom: 0 }}>Bands</div>
+                <button className={styles.search_result_add}>+</button>
+            </div>
             <div className={styles.band_row}>
                 {(props.bands ?? []).slice(0, 3).map((band, i) => (
                     <div key={i} className={styles.band_item}>

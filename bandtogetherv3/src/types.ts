@@ -14,9 +14,11 @@ export interface UserProps{
     instruments: string;
     genres: string;
     yrs_experience: string;
+    pictureUrl?: string;
     songs?: Song[];
     bands?: Band[];
     onEditClick?: () => void;
+    onPictureChange?: (file: File) => void;
 }
 
 export interface Song {
@@ -45,6 +47,7 @@ export interface FirestoreUserProfile {
     genres: string[];
     experience: string;
     email: string | null;
+    pictureUrl?: string;
     songs?: string[];
     bands?: string[];
 }
