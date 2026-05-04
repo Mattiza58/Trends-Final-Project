@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, getAdditionalUserInfo, signInWithPopup, signOut } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, getAdditionalUserInfo, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { collection, getFirestore } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import withFirebaseAuth from 'react-with-firebase-auth';
@@ -53,6 +53,15 @@ const uploadProfilePicture = async (file: File, userId: string): Promise<string>
   return getDownloadURL(imageRef);
 }
 
+const signUpWithEmail = async (email: string, password: string) => {
+  const result = await createUserWithEmailAndPassword(auth, email, password);
+  sessionStorage.setItem('pendingProfileSetup', result.user.uid);
+}
+
+const signInWithEmail = async (email: string, password: string) => {
+  await signInWithEmailAndPassword(auth, email, password);
+}
+
 export {
   db,
   auth,
@@ -63,4 +72,6 @@ export {
   signOutFirebase as signOut,
   uploadSongImage,
   uploadProfilePicture,
+  signUpWithEmail,
+  signInWithEmail,
 }
