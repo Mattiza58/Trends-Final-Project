@@ -1,33 +1,172 @@
-[2026-05-04T03:59:49.999Z] [debug] [vite] connecting...
-[2026-05-04T03:59:50.008Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
-[2026-05-04T03:59:50.039Z] [debug] [vite] connected.
-[2026-05-04T04:00:44.979Z] [debug] [vite] connecting...
-[2026-05-04T04:00:44.982Z] [debug] [vite] connected.
-[2026-05-04T04:00:44.986Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
-[2026-05-04T04:03:15.061Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
-[2026-05-04T04:03:22.676Z] [debug] [vite] hot updated: /src/pages/profile.tsx
-[2026-05-04T04:03:47.803Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
-[2026-05-04T04:03:57.011Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
-[2026-05-04T04:04:04.470Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
-[2026-05-04T04:04:13.812Z] [debug] [vite] connecting...
-[2026-05-04T04:04:13.814Z] [debug] [vite] connected.
-[2026-05-04T04:04:13.836Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
-[2026-05-04T04:13:14.185Z] [log] [vite] server connection lost. polling for restart...
-[2026-05-04T04:13:14.428Z] [debug] [vite] connecting...
-[2026-05-04T04:13:14.454Z] [debug] [vite] connected.
-[2026-05-04T04:13:14.467Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
-[2026-05-04T04:16:00.763Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
-[2026-05-04T04:17:24.048Z] [log] [vite] server connection lost. polling for restart...
-[2026-05-04T04:17:24.050Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:25.050Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:26.054Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:27.056Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:28.061Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:29.065Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:30.069Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:31.072Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:32.076Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
-[2026-05-04T04:17:33.149Z] [debug] [vite] connecting...
-[2026-05-04T04:17:33.165Z] [debug] [vite] connected.
-[2026-05-04T04:17:33.202Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
-[2026-05-04T04:23:38.701Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T04:53:48.137Z] [debug] [vite] connecting...
+[2026-05-04T04:53:48.154Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T04:53:48.213Z] [debug] [vite] connected.
+[2026-05-04T04:55:18.739Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T04:55:18.760Z] [error] The above error occurred in the <Music> component:
+
+    at Music (http://localhost:5173/src/pages/music.tsx?t=1777870518713:48:31)
+    at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=107359be:6431:26)
+    at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=107359be:7300:3)
+    at AuthUserProvider (http://localhost:5173/src/context/AuthContext.tsx:30:29)
+    at FirebaseAuthProvider (http://localhost:5173/node_modules/.vite/deps/react-with-firebase-auth.js?v=107359be:168:47)
+    at App
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=107359be:7230:13)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=107359be:10554:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2026-05-04T04:55:27.384Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T04:55:35.610Z] [debug] [vite] connecting...
+[2026-05-04T04:55:35.611Z] [debug] [vite] connected.
+[2026-05-04T04:55:35.645Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T05:03:03.941Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:03.941Z] [debug] [vite] invalidate /src/context/AuthContext.tsx: Could not Fast Refresh ("useAuth" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc#consistent-components-exports
+[2026-05-04T05:03:03.941Z] [debug] [vite] hot updated: /src/context/AuthContext.tsx
+[2026-05-04T05:03:03.941Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:03.941Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:03.941Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T05:03:03.942Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:03.943Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:03.945Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:03.945Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:03.945Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T05:03:03.945Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:03.945Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:16.602Z] [error] Error: Service storage is not available
+    at Provider.getImmediate (http://localhost:5173/node_modules/.vite/deps/chunk-VH5XYXF4.js?v=107359be:849:15)
+    at getStorage (http://localhost:5173/node_modules/.vite/deps/firebase_storage.js?v=32214a66:2484:43)
+    at http://localhost:5173/src/firebase.ts?t=1777870996331:18:17
+[2026-05-04T05:03:16.602Z] [error] [hmr] Failed to reload /src/components/user_creation.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:03:16.602Z] [error] Error: Service storage is not available
+    at Provider.getImmediate (http://localhost:5173/node_modules/.vite/deps/chunk-VH5XYXF4.js?v=107359be:849:15)
+    at getStorage (http://localhost:5173/node_modules/.vite/deps/firebase_storage.js?v=32214a66:2484:43)
+    at http://localhost:5173/src/firebase.ts?t=1777870996331:18:17
+[2026-05-04T05:03:16.602Z] [error] [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:03:16.602Z] [error] Error: Service storage is not available
+    at Provider.getImmediate (http://localhost:5173/node_modules/.vite/deps/chunk-VH5XYXF4.js?v=107359be:849:15)
+    at getStorage (http://localhost:5173/node_modules/.vite/deps/firebase_storage.js?v=32214a66:2484:43)
+    at http://localhost:5173/src/firebase.ts?t=1777870996331:18:17
+[2026-05-04T05:03:16.603Z] [error] [hmr] Failed to reload /src/components/EditProfileModal.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:03:16.603Z] [error] Error: Service storage is not available
+    at Provider.getImmediate (http://localhost:5173/node_modules/.vite/deps/chunk-VH5XYXF4.js?v=107359be:849:15)
+    at getStorage (http://localhost:5173/node_modules/.vite/deps/firebase_storage.js?v=32214a66:2484:43)
+    at http://localhost:5173/src/firebase.ts?t=1777870996331:18:17
+[2026-05-04T05:03:16.603Z] [error] [hmr] Failed to reload /src/context/AuthContext.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:03:16.603Z] [error] Error: Service storage is not available
+    at Provider.getImmediate (http://localhost:5173/node_modules/.vite/deps/chunk-VH5XYXF4.js?v=107359be:849:15)
+    at getStorage (http://localhost:5173/node_modules/.vite/deps/firebase_storage.js?v=32214a66:2484:43)
+    at http://localhost:5173/src/firebase.ts?t=1777870996331:18:17
+[2026-05-04T05:03:16.603Z] [error] [hmr] Failed to reload /src/pages/profile.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:03:16.603Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:16.603Z] [debug] [vite] hot updated: /src/context/AuthContext.tsx
+[2026-05-04T05:03:16.603Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:16.603Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:16.603Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:16.755Z] [debug] [vite] connecting...
+[2026-05-04T05:03:16.757Z] [debug] [vite] connected.
+[2026-05-04T05:03:17.545Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T05:03:28.253Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:28.253Z] [debug] [vite] invalidate /src/context/AuthContext.tsx: Could not Fast Refresh ("useAuth" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc#consistent-components-exports
+[2026-05-04T05:03:28.253Z] [debug] [vite] hot updated: /src/context/AuthContext.tsx
+[2026-05-04T05:03:28.253Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:28.253Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:28.253Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:28.257Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:28.257Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:28.257Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T05:03:28.257Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:28.257Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:28.262Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:28.262Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:28.262Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T05:03:28.262Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:28.262Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:28.270Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:28.270Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:28.270Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T05:03:28.270Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:28.270Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:42.168Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:03:42.168Z] [debug] [vite] hot updated: /src/components/profilecard.tsx
+[2026-05-04T05:03:42.168Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T05:03:42.168Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T05:03:42.168Z] [debug] [vite] hot updated: /src/components/EditProfileModal.tsx
+[2026-05-04T05:03:42.168Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:04:12.999Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:07:31.128Z] [debug] [vite] hot updated: /src/components/SearchPopup.tsx
+[2026-05-04T05:07:43.901Z] [debug] [vite] hot updated: /src/components/SearchPopup.tsx
+[2026-05-04T05:10:24.788Z] [debug] [vite] hot updated: /src/components/SearchPopup.tsx
+[2026-05-04T05:24:17.785Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:24:24.601Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:24:24.627Z] [error] Warning: Invalid DOM property `%s`. Did you mean `%s`?%s allowfullscreen allowFullScreen 
+    at iframe
+    at div
+    at Music (http://localhost:5173/src/pages/music.tsx?t=1777872264594:49:41)
+    at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:6431:26)
+    at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:7300:3)
+    at AuthUserProvider (http://localhost:5173/src/context/AuthContext.tsx?t=1777871008207:30:29)
+    at FirebaseAuthProvider (http://localhost:5173/node_modules/.vite/deps/react-with-firebase-auth.js?v=4fbb65ae:168:47)
+    at App
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:7230:13)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:10554:3)
+[2026-05-04T05:24:24.630Z] [error] The above error occurred in the <iframe> component:
+
+    at iframe
+    at div
+    at Music (http://localhost:5173/src/pages/music.tsx?t=1777872264594:49:41)
+    at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:6431:26)
+    at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:7300:3)
+    at AuthUserProvider (http://localhost:5173/src/context/AuthContext.tsx?t=1777871008207:30:29)
+    at FirebaseAuthProvider (http://localhost:5173/node_modules/.vite/deps/react-with-firebase-auth.js?v=4fbb65ae:168:47)
+    at App
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:7230:13)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:10554:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2026-05-04T05:24:30.426Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:24:37.445Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:24:37.466Z] [error] The above error occurred in the <iframe> component:
+
+    at iframe
+    at div
+    at Music (http://localhost:5173/src/pages/music.tsx?t=1777872277430:49:41)
+    at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:6431:26)
+    at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:7300:3)
+    at AuthUserProvider (http://localhost:5173/src/context/AuthContext.tsx?t=1777871008207:30:29)
+    at FirebaseAuthProvider (http://localhost:5173/node_modules/.vite/deps/react-with-firebase-auth.js?v=4fbb65ae:168:47)
+    at App
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:7230:13)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=4fbb65ae:10554:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2026-05-04T05:24:43.772Z] [debug] [vite] hot updated: /src/pages/music.tsx
+[2026-05-04T05:24:49.788Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:24:59.389Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:11.263Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[2026-05-04T05:25:11.263Z] [error] [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:25:11.263Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:13.286Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:17.234Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[2026-05-04T05:25:17.234Z] [error] [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:25:17.234Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:20.477Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[2026-05-04T05:25:20.477Z] [error] [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:25:20.477Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:22.525Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[2026-05-04T05:25:22.525Z] [error] [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:25:22.525Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:26.131Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[2026-05-04T05:25:26.131Z] [error] [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2026-05-04T05:25:26.131Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:28.170Z] [debug] [vite] hot updated: /src/App.tsx
+[2026-05-04T05:25:28.265Z] [debug] [vite] hot updated: /src/App.tsx

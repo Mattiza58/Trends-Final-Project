@@ -1,5 +1,5 @@
 import styles from "./maintext.module.css"
-import {UserProps} from "../types.ts";
+import { UserProps } from "../types.ts";
 
 const ProfileCard = (props: UserProps) =>{
     return <div className={styles.profile_card_container}>
@@ -16,7 +16,7 @@ const ProfileCard = (props: UserProps) =>{
                 <b>{props.followers}</b> Followers <b>{props.following}</b> Following
                 </div>
             </div>
-            <button className = {styles.edit_profile_button}>
+            <button className = {styles.edit_profile_button} onClick={props.onEditClick}>
                 Edit Profile
             </button>
             <ul style = {{fontFamily: "Be Vietnam Pro, sans-serif"}}>
@@ -34,13 +34,48 @@ const ProfileCard = (props: UserProps) =>{
                 </li>
             </ul>
         </div>
-        <div className={styles.card_container}>
-            <div style = {{fontFamily: "Be Vietnam Pro, sans-serif", fontSize: "30px"}}>
-                <b>Latest Music</b>
+        <div className={styles.profile_right_panel}>
+            <div className={styles.section_header}>Latest Music</div>
+            <div className={styles.song_card_row}>
+                {(props.songs ?? []).slice(0, 3).map((song, i) => (
+                    <div key={i} className={styles.song_card_item}>
+                        {song.imageUrl ? (
+                            <img
+                                className={styles.album_image}
+                                src={song.imageUrl}
+                                alt={song.title}
+                                onError={e => { (e.target as HTMLImageElement).src = "/placeholder_icon.png" }}
+                            />
+                        ) : (
+                            <div className={styles.song_card_placeholder}>
+                                <span className={styles.song_card_note}>&#9835;</span>
+                            </div>
+                        )}
+                        <div className={styles.album_info}>
+                            <p className={styles.album_title}>{song.title}</p>
+                            <p className={styles.album_artist}>{song.artist}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div style = {{paddingTop: "20px"}}>
-            {/* NOTE: The iframe is just a placeholder and not the intended functionality */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/RlNhD0oS5pk?si=I6iymzVYQ3Kkl5kq" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <div className={styles.section_header} style={{ marginTop: "2.5rem" }}>Bands</div>
+            <div className={styles.band_row}>
+                {(props.bands ?? []).slice(0, 3).map((band, i) => (
+                    <div key={i} className={styles.band_item}>
+                        {band.imageUrl ? (
+                            <img
+                                className={styles.band_circle_img}
+                                src={band.imageUrl}
+                                alt={band.name}
+                                onError={e => { (e.target as HTMLImageElement).src = "/placeholder_icon.png" }}
+                            />
+                        ) : (
+                            <div className={styles.band_circle} />
+                        )}
+                        <p className={styles.band_name}>{band.name}</p>
+                    </div>
+                ))}
             </div>
         </div>
     </div>

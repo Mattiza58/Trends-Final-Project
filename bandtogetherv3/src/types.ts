@@ -13,7 +13,25 @@ export interface UserProps{
     location: string;
     instruments: string;
     genres: string;
-    yrs_experience: string
+    yrs_experience: string;
+    songs?: Song[];
+    bands?: Band[];
+    onEditClick?: () => void;
+}
+
+export interface Song {
+    id: string;
+    title: string;
+    artist: string;
+    genre: string;
+    year: number;
+    imageUrl: string;
+}
+
+export interface Band {
+    id: string;
+    name: string;
+    imageUrl: string;
 }
 
 export interface FirestoreUserProfile {
@@ -27,4 +45,6 @@ export interface FirestoreUserProfile {
     genres: string[];
     experience: string;
     email: string | null;
+    songs?: string[];
+    bands?: string[];
 }

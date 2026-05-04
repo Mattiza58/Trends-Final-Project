@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, getAdditionalUserInfo, signInWithPopup, signOut } from "firebase/auth";
 import { collection, getFirestore } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import withFirebaseAuth from 'react-with-firebase-auth';
 
 const firebaseConfig = {
@@ -15,7 +16,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app)
+const db = getFirestore(app);
+const storage = getStorage(app);
 const Dates = collection(db, "Dates");
 
 const providers = {
@@ -39,11 +41,19 @@ const signOutFirebase = () => {
   signOut(auth)
 }
 
+const uploadSongImage = async (file: File, songId: string): Promise<string> => {
+  const imageRef = ref(storage, `songs/${songId}/${file.name}`);
+  await uploadBytes(imageRef, file);
+  return getDownloadURL(imageRef);
+}
+
 export {
   db,
   auth,
+  storage,
   Dates,
   createComponentWithAuth,
   signInWithGoogle,
   signOutFirebase as signOut,
+  uploadSongImage,
 }
