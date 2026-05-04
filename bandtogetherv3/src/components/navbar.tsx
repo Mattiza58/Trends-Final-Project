@@ -1,10 +1,16 @@
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import styles from "./maintext.module.css"
 import { useAuth } from "../context/AuthContext"
 
 
 const NavBar = (()=>{
 const {user, signOut} = useAuth();
+const navigate = useNavigate();
+
+const handleLogOut = () => {
+    signOut();
+    navigate("/");
+}
 
     return  <nav>
         <div>
@@ -27,11 +33,11 @@ const {user, signOut} = useAuth();
                 <Link to = "/music">Music</Link>
             </li>
             <li className = {styles.other_li}>
-                {user ? <button className ={styles.login_button} onClick = {signOut}>
+                {user ? <button className ={styles.login_button} onClick = {handleLogOut}>
                     Log Out
                 </button> : <Link to = "/sign_in" style = {{margin: "0", padding: "0"}}> <button className ={styles.login_button}>
-                    Login 
-                </button> </Link>}                
+                    Login
+                </button> </Link>}
             </li>
         </ul>
     </nav>

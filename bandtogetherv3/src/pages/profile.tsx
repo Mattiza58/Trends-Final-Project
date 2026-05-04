@@ -1,23 +1,47 @@
+import { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
 import LargeText from "../components/largetext";
 import ProfileCard from "../components/profilecard";
-import {UserProps} from "../types.ts";
-import { getAuth } from "firebase/auth";
+import { db } from "../firebase";
+import { useAuth } from "../context/AuthContext";
+import { FirestoreUserProfile } from "../types";
 
-// name = "Matthew Izaguirre" user_name="@mattiza58" followers= {375} following={371} location="Ithaca, NY" instruments="Guitar, Bass" genres="Rock, Metal, Indie" yrs_experience="4+ Years Experience"
+const Profile = () => {
+    const { user, loading: authLoading } = useAuth();
+    const [profile, setProfile] = useState<FirestoreUserProfile | null>(null);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        if (authLoading) return;
+        if (!user) {
+            setLoading(false);
+            return;
+        }
+        getDoc(doc(db, "users", user.uid)).then(snap => {
+            if (snap.exists()) {
+                setProfile(snap.data() as FirestoreUserProfile);
+            }
+            setLoading(false);
+        });
+    }, [user, authLoading]);
 
-const Profile = (() =>{
-    const auth = getAuth();
-    // const user = auth.currentUser;
+    if (authLoading || loading) return <div style={{ fontFamily: "Be Vietnam Pro, sans-serif", padding: "2rem" }}>Loading...</div>;
 
-    // const props: UserProps = {name: user?.displayName, user_name: "@mattiza58", followers: 375, following: 371, location: "Ithaca, NY", instruments: "Guitar, Bass", genres: "Rock, Metal, Indie", yrs_experience: "4+ Years" }
+    if (!profile) return <div style={{ fontFamily: "Be Vietnam Pro, sans-serif", padding: "2rem" }}>No profile found.</div>;
 
     return <div>
-        <LargeText link = "Profile"/>
-
-        <ProfileCard name = "Matthew Izaguirre" user_name="@mattiza58" followers= {375} following={371} location="Ithaca, NY" instruments="Guitar, Bass" genres="Rock, Metal, Indie" yrs_experience="4+ Years Experience"/>
-
-    </div>
-})
+        <LargeText link="Profile" />
+        <ProfileCard
+            name={`${profile.firstName} ${profile.lastName}`}
+            user_name={`@${profile.username}`}
+            followers={0}
+            following={0}
+            location={profile.location}
+            instruments={profile.instruments.join(", ")}
+            genres={profile.genres.join(", ")}
+            yrs_experience={`${profile.experience} Years Experience`}
+        />
+    </div>;
+};
 
 export default Profile;

@@ -1,9 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, getAdditionalUserInfo, signInWithPopup, signOut } from "firebase/auth";
 import { collection, getFirestore } from "firebase/firestore";
-import { signInWithPopup } from "firebase/auth";
-import { signOut } from "firebase/auth";
 import withFirebaseAuth from 'react-with-firebase-auth';
 
 const firebaseConfig = {
@@ -30,8 +27,12 @@ const createComponentWithAuth = withFirebaseAuth({
   firebaseAppAuth: auth,
 })
 
-const signInWithGoogle = () => {
-  signInWithPopup(auth, providers.googleProvider);
+const signInWithGoogle = async () => {
+  const result = await signInWithPopup(auth, providers.googleProvider);
+  const info = getAdditionalUserInfo(result);
+  if (info?.isNewUser) {
+    sessionStorage.setItem('pendingProfileSetup', result.user.uid);
+  }
 }
 
 const signOutFirebase = () => {
@@ -44,5 +45,5 @@ export {
   Dates,
   createComponentWithAuth,
   signInWithGoogle,
-  signOutFirebase as signOut
+  signOutFirebase as signOut,
 }

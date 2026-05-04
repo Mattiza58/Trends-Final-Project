@@ -1,0 +1,33 @@
+[2026-05-04T03:59:49.999Z] [debug] [vite] connecting...
+[2026-05-04T03:59:50.008Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T03:59:50.039Z] [debug] [vite] connected.
+[2026-05-04T04:00:44.979Z] [debug] [vite] connecting...
+[2026-05-04T04:00:44.982Z] [debug] [vite] connected.
+[2026-05-04T04:00:44.986Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T04:03:15.061Z] [debug] [vite] hot updated: /src/components/ProtectedCreationRoute.tsx
+[2026-05-04T04:03:22.676Z] [debug] [vite] hot updated: /src/pages/profile.tsx
+[2026-05-04T04:03:47.803Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T04:03:57.011Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T04:04:04.470Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T04:04:13.812Z] [debug] [vite] connecting...
+[2026-05-04T04:04:13.814Z] [debug] [vite] connected.
+[2026-05-04T04:04:13.836Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T04:13:14.185Z] [log] [vite] server connection lost. polling for restart...
+[2026-05-04T04:13:14.428Z] [debug] [vite] connecting...
+[2026-05-04T04:13:14.454Z] [debug] [vite] connected.
+[2026-05-04T04:13:14.467Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T04:16:00.763Z] [debug] [vite] hot updated: /src/components/user_creation.tsx
+[2026-05-04T04:17:24.048Z] [log] [vite] server connection lost. polling for restart...
+[2026-05-04T04:17:24.050Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:25.050Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:26.054Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:27.056Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:28.061Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:29.065Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:30.069Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:31.072Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:32.076Z] [error] Failed to load resource: net::ERR_CONNECTION_REFUSED
+[2026-05-04T04:17:33.149Z] [debug] [vite] connecting...
+[2026-05-04T04:17:33.165Z] [debug] [vite] connected.
+[2026-05-04T04:17:33.202Z] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[2026-05-04T04:23:38.701Z] [debug] [vite] hot updated: /src/App.tsx

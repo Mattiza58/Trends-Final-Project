@@ -15,3 +15,16 @@ export interface UserProps{
     genres: string;
     yrs_experience: string
 }
+
+export interface FirestoreUserProfile {
+    firstName: string;
+    lastName: string;
+    username: string;
+    age: string;
+    gender: string;
+    location: string;
+    instruments: string[];
+    genres: string[];
+    experience: string;
+    email: string | null;
+}

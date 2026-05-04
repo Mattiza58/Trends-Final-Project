@@ -12,7 +12,8 @@ const { user } = useAuth();
 
   useEffect(() => {
     if (user) {
-      navigate("/profile");
+      const pendingUid = sessionStorage.getItem('pendingProfileSetup');
+      navigate(pendingUid === user.uid ? "/create_user" : "/profile");
     }
   }, [user, navigate]);
 

@@ -233,7 +233,12 @@ nav li:hover{
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    box-sizing: border-box;
 }
 
 .login_box{
@@ -254,29 +259,25 @@ nav li:hover{
 }
 
 .create_user_box {
-
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-self: center;
-    gap: 50px;
-    width: 1000px;
-    height: 600px;
+    gap: 20px;
+    width: 900px;
+    max-width: 95vw;
+    height: auto;
     background-color: var(--secondary_color);
-    text-align: center;
     font-family: "Be Vietnam Pro", "sans-serif";
     font-size: large;
-    padding-top: 50px;
-    border-radius: 10px;
-    position: absolute;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    position: relative;
     z-index: 3;
-    
 }
 
 .create_form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
     z-index: inherit;
 }
 
@@ -347,10 +348,174 @@ nav li:hover{
 
 .submit_button:hover{
     opacity: 90%;
+    cursor: pointer;
 }
 
+.form_field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.65rem 1.5rem;
+}
 
+.field_label {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    min-width: 95px;
+    text-align: right;
+}
 
+.modern_input {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    width: 190px;
+    transition: border-color 0.2s;
+}
 
+.modern_input:focus {
+    border-color: var(--main_color);
+}
+
+.modern_input::placeholder {
+    color: #bbb;
+}
+
+.music_section {
+    margin: 1rem 2rem;
+    position: relative;
+}
+
+.section_label {
+    display: block;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.tag_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 32px;
+}
+
+.tag {
+    background-color: #ececec;
+    border-radius: 20px;
+    padding: 4px 10px 4px 12px;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    color: #444;
+}
+
+.tag_remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #888;
+    padding: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.tag_remove:hover {
+    color: var(--main_color);
+}
+
+.add_button {
+    background-color: #e4e4e4;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 14px;
+    cursor: pointer;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.82rem;
+    color: #555;
+    transition: background-color 0.15s;
+}
+
+.add_button:hover {
+    background-color: #d0d0d0;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    width: 310px;
+}
+
+.dropdown_item {
+    background: #f4f4f4;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.8rem;
+    color: #444;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.dropdown_item:hover {
+    background-color: #ffe0e0;
+    color: var(--main_color);
+}
+
+.experience_buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.exp_button {
+    background-color: #e4e4e4;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 0.85rem;
+    color: #555;
+    transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+}
+
+.exp_button:hover {
+    border-color: var(--main_color);
+    color: var(--main_color);
+}
+
+.exp_button_active {
+    background-color: var(--main_color);
+    border-color: var(--main_color);
+    color: #fff;
+}
+
+.exp_button_active:hover {
+    color: #fff;
+}
 
 
