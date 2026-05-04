@@ -15,6 +15,8 @@ const SearchPopup = ({ onClose }: SearchPopupProps) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState("")
     const [selectedSong, setSelectedSong] = useState<Song | null>(null)
+    const [filterGenre, setFilterGenre] = useState("")
+    const [filterYear, setFilterYear] = useState("")
     const inputRef = useRef<HTMLInputElement>(null)
 
     useEffect(() => {
@@ -39,9 +41,15 @@ const SearchPopup = ({ onClose }: SearchPopupProps) => {
         return () => document.removeEventListener("keydown", handler)
     }, [onClose])
 
-    const results = query.trim()
-        ? songs.filter(s => s.title.toLowerCase().includes(query.toLowerCase()))
-        : songs
+    const genres = [...new Set(songs.map(s => s.genre).filter(Boolean))].sort()
+    const years = [...new Set(songs.map(s => s.year).filter(Boolean))].sort((a, b) => b - a)
+
+    const results = songs.filter(s => {
+        if (query.trim() && !s.title.toLowerCase().includes(query.toLowerCase())) return false
+        if (filterGenre && s.genre !== filterGenre) return false
+        if (filterYear && s.year !== parseInt(filterYear)) return false
+        return true
+    })
 
     return (
         <div className={styles.search_popup_overlay}>
@@ -57,6 +65,30 @@ const SearchPopup = ({ onClose }: SearchPopupProps) => {
                     value={query}
                     onChange={e => setQuery(e.target.value)}
                 />
+            </div>
+
+            <div className={styles.search_filter_bar}>
+                <select
+                    className={styles.search_filter_select}
+                    value={filterGenre}
+                    onChange={e => setFilterGenre(e.target.value)}
+                >
+                    <option value="">All Genres</option>
+                    {genres.map(g => <option key={g} value={g}>{g}</option>)}
+                </select>
+                <select
+                    className={styles.search_filter_select}
+                    value={filterYear}
+                    onChange={e => setFilterYear(e.target.value)}
+                >
+                    <option value="">All Years</option>
+                    {years.map(y => <option key={y} value={y}>{y}</option>)}
+                </select>
+                {(filterGenre || filterYear) && (
+                    <button className={styles.search_filter_clear} onClick={() => { setFilterGenre(""); setFilterYear(""); }}>
+                        Clear filters
+                    </button>
+                )}
             </div>
 
             {loading && <p className={styles.search_no_results}>Loading...</p>}

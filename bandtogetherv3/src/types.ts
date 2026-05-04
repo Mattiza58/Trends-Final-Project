@@ -19,6 +19,9 @@ export interface UserProps{
     bands?: Band[];
     onEditClick?: () => void;
     onPictureChange?: (file: File) => void;
+    onSongClick?: (song: Song) => void;
+    onSongRemove?: (song: Song) => void;
+    onAddSongClick?: () => void;
 }
 
 export interface Song {

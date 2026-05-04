@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { doc, getDoc, collection, getDocs, updateDoc } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs, updateDoc, arrayRemove } from "firebase/firestore";
 import LargeText from "../components/largetext";
 import ProfileCard from "../components/profilecard";
 import EditProfileModal from "../components/EditProfileModal";
+import SongPopup from "../components/SongPopup"
+import AddSongModal from "../components/AddSongModal";
 import { db, uploadProfilePicture } from "../firebase";
 import { useAuth } from "../context/AuthContext";
 import { FirestoreUserProfile, Song, Band } from "../types";
@@ -14,6 +16,8 @@ const Profile = () => {
     const [resolvedBands, setResolvedBands] = useState<Band[]>([]);
     const [loading, setLoading] = useState(true);
     const [showEditModal, setShowEditModal] = useState(false);
+    const [selectedSong, setSelectedSong] = useState<Song | null>(null);
+    const [showAddSongModal, setShowAddSongModal] = useState(false);
 
     const handlePictureChange = async (file: File) => {
         if (!user) return;
@@ -83,7 +87,27 @@ const Profile = () => {
             bands={resolvedBands}
             onEditClick={() => setShowEditModal(true)}
             onPictureChange={handlePictureChange}
+            onSongClick={setSelectedSong}
+            onSongRemove={async (song) => {
+                if (!user) return;
+                await updateDoc(doc(db, "users", user.uid), { songs: arrayRemove(song.title) });
+                setResolvedSongs(prev => prev.filter(s => s.id !== song.id));
+                setProfile(prev => prev ? { ...prev, songs: (prev.songs ?? []).filter(t => t !== song.title) } : prev);
+            }}
+            onAddSongClick={() => setShowAddSongModal(true)}
         />
+        {selectedSong && (
+            <SongPopup song={selectedSong} onClose={() => setSelectedSong(null)} />
+        )}
+        {showAddSongModal && (
+            <AddSongModal
+                onClose={() => setShowAddSongModal(false)}
+                onSongAdded={song => {
+                    setResolvedSongs(prev => [...prev, song]);
+                    setProfile(prev => prev ? { ...prev, songs: [...(prev.songs ?? []), song.title] } : prev);
+                }}
+            />
+        )}
         {showEditModal && (
             <EditProfileModal
                 profile={profile}

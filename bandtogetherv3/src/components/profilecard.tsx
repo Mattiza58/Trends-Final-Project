@@ -66,11 +66,17 @@ const ProfileCard = (props: UserProps) =>{
         <div className={styles.profile_right_panel}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem" }}>
                 <div className={styles.section_header} style={{ marginBottom: 0 }}>Latest Music</div>
-                <button className={styles.search_result_add}>+</button>
+                {(props.songs ?? []).length < 3 && (
+                    <button className={styles.search_result_add} onClick={props.onAddSongClick}>+</button>
+                )}
             </div>
             <div className={styles.song_card_row}>
                 {(props.songs ?? []).slice(0, 3).map((song, i) => (
-                    <div key={i} className={styles.song_card_item}>
+                    <div key={i} className={styles.song_card_item} onClick={() => props.onSongClick?.(song)} style={props.onSongClick ? { cursor: "pointer" } : undefined}>
+                        <button
+                            className={styles.song_card_remove_btn}
+                            onClick={e => { e.stopPropagation(); props.onSongRemove?.(song); }}
+                        >×</button>
                         {song.imageUrl ? (
                             <img
                                 className={styles.album_image}

@@ -20,9 +20,9 @@ const handleLogOut = () => {
             </Link>
         </div>
         <ul>
-            <li>
+            {user && <li>
                 <Link to = "/profile">Profile</Link>
-            </li>
+            </li>}
             <li>
                 <Link to = "/performances">Perfomances</Link>
             </li>

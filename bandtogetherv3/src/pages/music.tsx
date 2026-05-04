@@ -6,22 +6,22 @@ import LargeText from "../components/largetext";
 
 const SPOTLIGHT_SONGS = [
     {
-        title: "Stone in Love",
-        artist: "Journey · Escape (1981)",
-        image: "/journey.jpeg",
-        description: "A soaring anthem about youthful romance and the bittersweet nostalgia of first love, built on Neal Schon's iconic guitar and Steve Perry's powerhouse vocals.",
+        title: "4x4",
+        artist: "Cashmere Rips · 4x4 (2025)",
+        image: "/cashmere.png",
+        description: "The first single by Electric Buffalo Record's very own Cashmere Rips!",
     },
     {
-        title: "Bohemian Rhapsody",
-        artist: "Queen · A Night at the Opera (1975)",
-        image: "/gnr.jpg",
-        description: "A genre-defying six-minute epic blending ballad, opera, and hard rock. Freddie Mercury's magnum opus remains one of the most ambitious songs ever recorded.",
+        title: "Hush Money",
+        artist: "Spit! · Spit! (2026)",
+        image: "/spit.png",
+        description: "After months of waiting, experience Spit!'s debut single on their newly released EP",
     },
     {
-        title: "Hard To Explain",
-        artist: "The Strokes · Is This It (2001)",
-        image: "/strokes.jpg",
-        description: "Jittery guitars and Julian Casablancas's detached drawl defined a generation of indie rock. A snapshot of downtown New York cool at the turn of the millennium.",
+        title: "coyotes",
+        artist: "Norah Scarlett · coyotes (2026)",
+        image: "/coyotes.png",
+        description: "New York singer Norah Scarlett's vocals are otherworldy. Experience a song like no other, from a student that walks the same halls as us.",
     },
 ];
 
